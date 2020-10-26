@@ -1,0 +1,10 @@
+<mat-card>
+    <img mat-card-image [src]="country.flag" alt="{{'Photo of flag of ' + country.name}}">
+    <mat-card-title>{{country.name}}</mat-card-title>
+    <mat-card-content>
+        <span><b>Population: </b>{{country.population | number}}</span>
+        <span><b>Region: </b>{{country.region}}</span>
+        <span><b>Capital: </b>{{country.capital}}</span>
+        <a *ngFor="let borderCountry of country.borders">{{borderCountry}}</a>
+    </mat-card-content>
+</mat-card>

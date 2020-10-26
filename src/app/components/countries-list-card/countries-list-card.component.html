@@ -1,0 +1,9 @@
+<mat-card>
+    <img mat-card-image [src]="countryData.flag" alt="{{'Photo of flag of ' + countryData.name}}">
+    <mat-card-title>{{countryData.name}}</mat-card-title>
+    <mat-card-content>
+        <span><b>Population: </b>{{countryData.population | number}}</span>
+        <span><b>Region: </b>{{countryData.region}}</span>
+        <span><b>Capital: </b>{{countryData.capital}}</span>
+    </mat-card-content>
+</mat-card>
