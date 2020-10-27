@@ -25,7 +25,8 @@
             ],
             "styles": [
               "src/custom-theme.scss",
-              "src/styles.less"
+              "src/styles.less",
+              "node_modules/flexboxgrid/dist/flexboxgrid.css"
             ],
             "scripts": []
           },
@@ -89,7 +90,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.less"
+              "src/custom-theme.scss",
+              "src/styles.less",
+              "node_modules/flexboxgrid/dist/flexboxgrid.css"
             ],
             "scripts": []
           }

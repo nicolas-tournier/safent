@@ -1,10 +1,25 @@
-<mat-card>
-    <img mat-card-image [src]="country.flag" alt="{{'Photo of flag of ' + country.name}}">
-    <mat-card-title>{{country.name}}</mat-card-title>
-    <mat-card-content>
-        <span><b>Population: </b>{{country.population | number}}</span>
-        <span><b>Region: </b>{{country.region}}</span>
-        <span><b>Capital: </b>{{country.capital}}</span>
-        <a *ngFor="let borderCountry of country.borders">{{borderCountry}}</a>
-    </mat-card-content>
-</mat-card>
+<div class="grid-row">
+    <img mat-card-image class="grid-item country" [src]="country.flag" alt="{{'Photo of flag of ' + country.name}}">
+    <div class="grid-item country">
+        <h1>{{country.name}}</h1>
+        <section class="row">
+            <div class="col-sm-12 col-lg-6">
+                <span><b>Native Name: </b>{{country.nativeName}}</span>
+                <span><b>Population: </b>{{country.population | number}}</span>
+                <span><b>Region: </b>{{country.region}}</span>
+                <span><b>Sub Region: </b>{{country.subregion}}</span>
+                <span><b>Capital: </b>{{country.capital}}</span>
+            </div>
+            <div class="col-sm-12 col-lg-6">
+                <span><b>Top Level Domain: </b>{{country.topLevelDomain}}</span>
+                <span><b>Currencies: </b><span *ngFor="let currency of country.currencies"
+                        class="inline">{{currency.name}} </span></span>
+                <span><b>Languages: </b><span *ngFor="let language of country.languages"
+                        class="inline">{{language.name}} </span></span>
+            </div>
+        </section>
+        <div class="row">
+            <span class="inline col-sm-12 col-lg-6"><a *ngFor="let borderCountry of country.borders">{{borderCountry}} </a></span>
+        </div>
+    </div>
+</div>
