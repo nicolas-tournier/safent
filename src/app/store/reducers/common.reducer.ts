@@ -2,17 +2,17 @@ import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { CommonActions, CommonActionTypes } from "../actions";
 
 export interface State {
-  currentlySelectedCioc: string;
+  currentlySelectedAlpha3Code: string;
 }
 export const initialState: State = {
-  currentlySelectedCioc: undefined
+  currentlySelectedAlpha3Code: undefined
 }
 export function reducer(state: State = initialState, action: CommonActions): State {
   switch (action.type) {
-    case CommonActionTypes.UpdateCurrentlySelectedCioc: {
+    case CommonActionTypes.UpdateCurrentlySelectedAlpha3Code: {
       return {
         ...state,
-        currentlySelectedCioc: action.payload.cioc
+        currentlySelectedAlpha3Code: action.payload.alpha3Code
       }
     }
     default: {
@@ -21,4 +21,4 @@ export function reducer(state: State = initialState, action: CommonActions): Sta
   }
 }
 export const commonState = createFeatureSelector<State>('common');
-export const getCurrentlySelectedCioc = createSelector(commonState, (state: State) => (state.currentlySelectedCioc));
+export const getCurrentlySelectedAlpha3Code = createSelector(commonState, (state: State) => (state.currentlySelectedAlpha3Code));

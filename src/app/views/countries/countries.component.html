@@ -1,3 +1,3 @@
 <div id="countries" class="grid-row">
-    <app-countries-list-card *ngFor="let country of (facade.countriesList$ | async)" [countryData]="country" class="grid-item" style="cursor: pointer" (click)="onCountrySelected(country.cioc)"></app-countries-list-card>
+    <app-countries-list-card *ngFor="let country of (facade.countriesList$ | async)" [countryData]="country" class="grid-item" style="cursor: pointer" (click)="onCountrySelected(country.alpha3Code)"></app-countries-list-card>
 </div>

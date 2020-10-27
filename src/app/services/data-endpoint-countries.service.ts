@@ -9,7 +9,7 @@ import { environment } from '../environment';
 })
 export class DataEndpointCountriesService {
 
-  private endpoint = `${environment.apiBasePath}/rest/v2/all?fields=name;population;region;capital;flag;cioc`;
+  private endpoint = `${environment.apiBasePath}/rest/v2/all?fields=name;population;region;capital;flag;alpha3Code`;
 
   constructor(private http: HttpClient) { }
 

@@ -3,7 +3,7 @@ import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { map, take, tap } from 'rxjs/operators';
 import { CountryList } from '../model/CountryList';
-import { LoadAllCountries, UpdateCurrentlySelectedCioc } from '../store/actions';
+import { LoadAllCountries, UpdateCurrentlySelectedAlpha3Code } from '../store/actions';
 import { fromCountries } from '../store/reducers';
 
 @Injectable({
@@ -26,7 +26,7 @@ export class DataFacadeCountriesService {
   loadCountriesList() {
     this.store.dispatch(new LoadAllCountries());
   }
-  updateCurrentlySelectedCioc(cioc: string) {
-    this.store.dispatch(new UpdateCurrentlySelectedCioc({ cioc: cioc }))
+  updateCurrentlySelectedCioc(alpha3Code: string) {
+    this.store.dispatch(new UpdateCurrentlySelectedAlpha3Code({ alpha3Code: alpha3Code }))
   }
 }

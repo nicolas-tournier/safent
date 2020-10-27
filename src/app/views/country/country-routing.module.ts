@@ -5,7 +5,7 @@ import { CountryResolve } from './country.resolve';
 
 const routes: Routes = [
     {
-        path: ":cioc",
+        path: ":alpha3Code",
         component: CountryComponent,
         resolve: {
             country: CountryResolve

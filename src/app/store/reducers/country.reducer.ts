@@ -12,7 +12,7 @@ export const initialState: State = {
 export function reducer(state: State = initialState, action: CountryActions): State {
   switch (action.type) {
     case CountryActionTypes.LoadSelectedCountrySuccess: {
-      let toAdd = { [action.payload.country.cioc]: action.payload.country };
+      let toAdd = { [action.payload.country.alpha3Code]: action.payload.country };
       return {
         ...state,
         countriesSelected: { ...state.countriesSelected, ...toAdd }
@@ -26,9 +26,9 @@ export function reducer(state: State = initialState, action: CountryActions): St
 
 export const countrySelectState = createFeatureSelector<State>('country');
 
-export function getSelectedCountry(cioc: string) {
+export function getSelectedCountry(alpha3Code: string) {
   return createSelector(countrySelectState, (state: State) => {
-    if (!state.countriesSelected || !state.countriesSelected[cioc]) { return undefined }
-    return state.countriesSelected[cioc] as CountrySelect;
+    if (!state.countriesSelected || !state.countriesSelected[alpha3Code]) { return undefined }
+    return state.countriesSelected[alpha3Code] as CountrySelect;
   });
 }

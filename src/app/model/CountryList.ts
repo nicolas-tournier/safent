@@ -1,5 +1,5 @@
 export interface CountryList {
-    cioc: string;
+    alpha3Code: string;
     name: string;
     population: number;
     region: string;

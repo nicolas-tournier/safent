@@ -13,21 +13,21 @@ export class DataFacadeCountryService {
 
   constructor(private store: Store<fromCountry.State>) { }
 
-  currentSelectedCountryCioc$: Observable<string> = this.store
+  currentSelectedCountryAlpha3Code$: Observable<string> = this.store
     .pipe(
-      select(fromCommon.getCurrentlySelectedCioc),
-      filter(cioc => !!cioc),
-      map(cioc => cioc)
+      select(fromCommon.getCurrentlySelectedAlpha3Code),
+      filter(alpha3Code => !!alpha3Code),
+      map(alpha3Code => alpha3Code)
     )
 
-  selectedCountry$: Observable<CountrySelect> = this.currentSelectedCountryCioc$
+  selectedCountry$: Observable<CountrySelect> = this.currentSelectedCountryAlpha3Code$
     .pipe(
-      switchMap(cioc => this.store.pipe(
-        select(fromCountry.getSelectedCountry(cioc)),
+      switchMap(alpha3Code => this.store.pipe(
+        select(fromCountry.getSelectedCountry(alpha3Code)),
         map(country => country),
         tap(country => {
           if (!country) {
-            this.store.dispatch(new LoadSelectedCountry({ cioc: cioc }))
+            this.store.dispatch(new LoadSelectedCountry({ alpha3Code: alpha3Code }))
           }
         })
       )),

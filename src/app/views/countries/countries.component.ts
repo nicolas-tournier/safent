@@ -11,7 +11,7 @@ export class CountriesComponent {
 
   constructor(public facade: DataFacadeCountriesService, private router: Router) {}
 
-  onCountrySelected(cioc: string): void {
-    this.router.navigate(['/country', cioc]);
+  onCountrySelected(alpha3Code: string): void {
+    this.router.navigate(['/country', alpha3Code]);
   }
 }

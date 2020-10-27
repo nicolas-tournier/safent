@@ -13,9 +13,10 @@ export class CountryResolve implements Resolve<CountrySelect> {
 
   resolve(route: ActivatedRouteSnapshot): Observable<CountrySelect> {
     
-    let cioc = route.params['cioc'];
+    let alpha3Code = route.params['alpha3Code'];
+    console.log('resolve ', alpha3Code);
 
-    this.commonFacade.updateCurrentlySelectedCioc(cioc);
+    this.commonFacade.updateCurrentlySelectedCioc(alpha3Code);
 
     return this.facade.selectedCountry$.pipe(
       take(1),

@@ -11,8 +11,8 @@ export class DataEndpointCountryService {
 
   constructor(private http: HttpClient) { }
 
-  getSelectedCountry(cioc: string): Observable<CountrySelect> {
-    let endpoint = `${environment.apiBasePath}/rest/v2/alpha/${cioc}?fields=name;nativeName;population;region;subregion;capital;topLevelDomain;currencies;languages;borders;cioc;flag`;
+  getSelectedCountry(alpha3Code: string): Observable<CountrySelect> {
+    let endpoint = `${environment.apiBasePath}/rest/v2/alpha/${alpha3Code}?fields=name;nativeName;population;region;subregion;capital;topLevelDomain;currencies;languages;borders;alpha3Code;flag`;
     return this.http.get<CountrySelect>(endpoint);
   }
 }

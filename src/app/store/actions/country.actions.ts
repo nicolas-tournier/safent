@@ -11,7 +11,7 @@ export enum CountryActionTypes {
 
 export class LoadSelectedCountry implements Action {
   readonly type = CountryActionTypes.LoadSelectedCountry;
-  constructor(public payload: { cioc: string }) { }
+  constructor(public payload: { alpha3Code: string }) { }
 }
 export class LoadSelectedCountrySuccess implements Action {
   readonly type = CountryActionTypes.LoadSelectedCountrySuccess;
@@ -23,7 +23,7 @@ export class LoadSelectedCountryFailure implements Action {
 }
 export class LoadSelectedCountryByAbbreviation implements Action {
   readonly type = CountryActionTypes.LoadSelectedCountryByAbbreviation;
-  constructor(public payload: { cioc: string }) { }
+  constructor(public payload: { alpha3Code: string }) { }
 }
 
 export type CountryActions = LoadSelectedCountry | LoadSelectedCountrySuccess | LoadSelectedCountryFailure |

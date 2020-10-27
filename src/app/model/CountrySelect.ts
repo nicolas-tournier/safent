@@ -9,6 +9,6 @@ export interface CountrySelect {
     currencies: string[];
     languages: string[];
     borders: { cioc: string, name: string }[];
-    cioc: string;
+    alpha3Code: string;
     flag: string;
 }

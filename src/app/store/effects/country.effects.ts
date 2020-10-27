@@ -17,7 +17,7 @@ export class CountryEffects {
     @Effect()
     loadSelectedCountry$ = this.actions$.pipe(
         ofType(CountryActionTypes.LoadSelectedCountry),
-        switchMap((action) => this.endpointService.getSelectedCountry(action.payload.cioc).pipe(
+        switchMap((action) => this.endpointService.getSelectedCountry(action.payload.alpha3Code).pipe(
             map(country => new LoadSelectedCountrySuccess({ country: country })),
             catchError(error => of(new LoadSelectedCountryFailure({ error: error })))
         ))
